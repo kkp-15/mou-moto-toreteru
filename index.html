@@ -114,22 +114,31 @@
       const resultBox = document.getElementById('result');
       const totalChecks = checks.length;
 
+      // クラス初期化
+      resultBox.className = '';
+
+      let message = '';
+      let resultClass = '';
+
       if (checkedCount === 0) {
-        resultBox.textContent = 'まだ元は取れてないかも？でもこれから取れるで！焦らんでええよ！';
-        resultBox.className = 'notyet show';
+        message = 'まだ元は取れてないかも？でもこれから取れるで！焦らんでええよ！';
+        resultClass = 'notyet';
       } else if (checkedCount < 5) {
-        resultBox.textContent = 'おめでとう！リベシティの元、もう取れてるで！ここからどんどん得していこな！';
-        resultBox.className = 'ok show';
+        message = 'おめでとう！リベシティの元、もう取れてるで！ここからどんどん得していこな！';
+        resultClass = 'ok';
       } else if (checkedCount < 10) {
-        resultBox.textContent = 'バッチリ元取れてるやん！その調子やで！リベ活もっと楽しんでな！';
-        resultBox.className = 'ok show';
+        message = 'バッチリ元取れてるやん！その調子やで！リベ活もっと楽しんでな！';
+        resultClass = 'ok';
       } else if (checkedCount < totalChecks) {
-        resultBox.textContent = 'それ、もう完全にリベマスターやで。得しかしてない状態や！すごいな〜！';
-        resultBox.className = 'ok show';
+        message = 'それ、もう完全にリベマスターやで。得しかしてない状態や！すごいな〜！';
+        resultClass = 'ok';
       } else {
-        resultBox.textContent = '全問チェック！？君はもうリベシティ仙人や！笑\n学長も「それ得しかないやつやん！」って拍手してるで〜！';
-        resultBox.className = 'ok show';
+        message = '全問チェック！？君はもうリベシティ仙人や！笑\n学長も「それ得しかないやつやん！」って拍手してるで〜！';
+        resultClass = 'ok';
       }
+
+      resultBox.textContent = message;
+      resultBox.classList.add(resultClass, 'show');
     }
   </script></body>
 </html>
