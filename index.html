@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リベシティ会費 元取れてる？チェック</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 1rem;
+      background: #f9f9f9;
+    }
+    h1 {
+      color: #d2691e;
+    }
+    .checklist {
+      margin: 1rem 0;
+    }
+    .checklist label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    #result {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .ok {
+      background-color: #d1ffd6;
+      color: #006400;
+    }
+    .notyet {
+      background-color: #ffe2e2;
+      color: #8b0000;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>リベシティ会費 元取れてる？チェック</h1>
+  <p>当てはまる項目にチェックしてみてね！1つでも当てはまれば、もう元取れてるで！</p>
+  <div class="checklist">
+    <label><input type="checkbox"> 家賃・保険・通信費などを見直して節約できた</label>
+    <label><input type="checkbox"> お得なキャンペーンや制度を活用した</label>
+    <label><input type="checkbox"> ネット銀行などで手数料を減らせた</label>
+    <label><input type="checkbox"> シティフリマでお得に売買できた</label>
+    <label><input type="checkbox"> インデックス投資や高配当株投資を始めた</label>
+    <label><input type="checkbox"> 投資の正しい知識で損せずに済んだ</label>
+    <label><input type="checkbox"> 暴落時に慌てずに行動できた</label>
+    <label><input type="checkbox"> 就職・転職・独立の相談で収入が上がった</label>
+    <label><input type="checkbox"> 副業で収入が得られた</label>
+    <label><input type="checkbox"> 本業のスキルUPで評価が上がった</label>
+    <label><input type="checkbox"> マップやSNSで売上が上がった</label>
+    <label><input type="checkbox"> 詐欺や怪しい投資を避けられた</label>
+    <label><input type="checkbox"> 金融・保険の相談で損を回避できた</label>
+    <label><input type="checkbox"> セキュリティ対策を知って資産を守れた</label>
+    <label><input type="checkbox"> 不要なサブスクを見直して支出を減らせた</label>
+    <label><input type="checkbox"> 時間をお金で買う意識が芽生えた</label>
+    <label><input type="checkbox"> 調べ物をリベシティで解決できた</label>
+    <label><input type="checkbox"> 他人の経験談で時間短縮できた</label>
+    <label><input type="checkbox"> リベシティ入ってよかったと感じたことがある</label>
+    <label><input type="checkbox"> 不安が減って将来に希望を感じた</label>
+    <label><input type="checkbox"> 応援・仲間とのつながりができた</label>
+  </div>
+  <button onclick="checkResult()">元取れてるかチェック！</button>
+  <div id="result"></div>  <script>
+    function checkResult() {
+      const checks = document.querySelectorAll('input[type="checkbox"]');
+      let checkedCount = 0;
+      checks.forEach(cb => { if (cb.checked) checkedCount++; });
+
+      const resultBox = document.getElementById('result');
+      if (checkedCount > 0) {
+        resultBox.textContent = 'おめでとう！リベシティの元、もう取れてるで！これからは得する一方やな！';
+        resultBox.className = 'ok';
+      } else {
+        resultBox.textContent = 'まだ元は取れてないかも？でもこれから取れるで！ゆっくり使っていこう！';
+        resultBox.className = 'notyet';
+      }
+    }
+  </script></body>
+</html>
