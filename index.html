@@ -43,13 +43,6 @@
       font-weight: bold;
       font-size: 1.2rem;
       text-align: center;
-      opacity: 0;
-      transform: scale(0.95);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .show {
-      opacity: 1;
-      transform: scale(1);
     }
     .ok {
       background-color: #d1ffd6;
@@ -114,9 +107,6 @@
       const resultBox = document.getElementById('result');
       const totalChecks = checks.length;
 
-      // クラス初期化
-      resultBox.className = '';
-
       let message = '';
       let resultClass = '';
 
@@ -138,7 +128,7 @@
       }
 
       resultBox.textContent = message;
-      resultBox.classList.add(resultClass, 'show');
+      resultBox.className = resultClass;
     }
   </script></body>
 </html>
