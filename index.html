@@ -43,6 +43,13 @@
       font-weight: bold;
       font-size: 1.2rem;
       text-align: center;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .show {
+      opacity: 1;
+      transform: scale(1);
     }
     .ok {
       background-color: #d1ffd6;
@@ -105,18 +112,23 @@
       checks.forEach(cb => { if (cb.checked) checkedCount++; });
 
       const resultBox = document.getElementById('result');
+      const totalChecks = checks.length;
+
       if (checkedCount === 0) {
         resultBox.textContent = 'まだ元は取れてないかも？でもこれから取れるで！焦らんでええよ！';
-        resultBox.className = 'notyet';
+        resultBox.className = 'notyet show';
       } else if (checkedCount < 5) {
         resultBox.textContent = 'おめでとう！リベシティの元、もう取れてるで！ここからどんどん得していこな！';
-        resultBox.className = 'ok';
+        resultBox.className = 'ok show';
       } else if (checkedCount < 10) {
         resultBox.textContent = 'バッチリ元取れてるやん！その調子やで！リベ活もっと楽しんでな！';
-        resultBox.className = 'ok';
-      } else {
+        resultBox.className = 'ok show';
+      } else if (checkedCount < totalChecks) {
         resultBox.textContent = 'それ、もう完全にリベマスターやで。得しかしてない状態や！すごいな〜！';
-        resultBox.className = 'ok';
+        resultBox.className = 'ok show';
+      } else {
+        resultBox.textContent = '全問チェック！？君はもうリベシティ仙人や！笑\n学長も「それ得しかないやつやん！」って拍手してるで〜！';
+        resultBox.className = 'ok show';
       }
     }
   </script></body>
